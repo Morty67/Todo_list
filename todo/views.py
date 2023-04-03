@@ -62,4 +62,3 @@ def change_is_done_for_task(request, pk):
         task.is_done = False
     task.save()
     return redirect("todo:task-list")
-
