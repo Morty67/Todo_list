@@ -30,7 +30,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # "jazzmin"
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -73,6 +72,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
