@@ -1,14 +1,33 @@
-<ul class="sidebar-nav list-group">
-  {% if user.is_authenticated %}
-    <li class="list-group-item">User: <a href="{{ user.get_absolute_url }}">{{ user.get_username }}</a></li>
-    <li class="list-group-item"><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
-  {% else %}
-    <li class="list-group-item"><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
-  {% endif %}
+<div class="sidebar">
+  <ul class="list-group">
+    {% if user.is_authenticated %}
+      <li class="list-group-item">
+        User: <a href="{{ user.get_absolute_url }}">{{ user.get_username }}</a>
+      </li>
+      <li class="list-group-item">
+        <a class="btn btn-secondary" href="{% url 'logout'%}?next={{request.path}}">
+          Logout
+        </a>
+      </li>
+    {% else %}
+      <li class="list-group-item">
+        <a class="btn btn-primary" href="{% url 'login'%}?next={{request.path}}">
+          Login
+        </a>
+      </li>
+    {% endif %}
 
-  <br>
+    <br>
 
-  <li class="list-group-item"><a href="#">Home</a></li>
-  <li class="list-group-item"><a href="#">Tags</a></li>
-
-</ul>
+    <li class="list-group-item">
+      <a class="btn btn-outline-info" href="{% url 'todo:task-list' %}">
+        Home
+      </a>
+    </li>
+    <li class="list-group-item">
+      <a class="btn btn-outline-info" href="{% url 'todo:tag-list' %}">
+        Tags
+      </a>
+    </li>
+  </ul>
+</div>
